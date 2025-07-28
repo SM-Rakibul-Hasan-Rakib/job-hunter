@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Job from "../Job/Job";
 
 const FeaturedJobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -14,6 +15,9 @@ const FeaturedJobs = () => {
   return (
     <div>
       <h2 className="text-4xl text-center">Featured Jobs {jobs.length}</h2>
+      {jobs.map((job) => (
+        <Job key={job.id} job={job}></Job>
+      ))}
     </div>
   );
 };
